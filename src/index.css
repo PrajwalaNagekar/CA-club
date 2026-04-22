@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ===========================================================
+     AURELIUS & CO. — CHARTERED ACCOUNTANTS
+     :root  -> LIGHT  (ivory paper, ink, brushed gold)
+     .dark  -> DARK   (deep navy ledger, gold, ivory)
+     =========================================================== */
+
+  :root {
+    /* ===== LIGHT THEME — Ivory ledger paper ===== */
+    --background: 40 38% 96%;             /* warm ivory paper */
+    --foreground: 220 40% 12%;            /* deep ink navy */
+
+    --surface: 40 32% 98%;
+    --surface-elevated: 0 0% 100%;
+    --surface-glass: 40 30% 99%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 12%;
+
+    /* Primary — brushed gold (firm seal, ₹ figures, CTAs) */
+    --primary: 38 70% 42%;                /* deeper gold for light bg contrast */
+    --primary-foreground: 40 38% 96%;
+    --primary-glow: 42 78% 56%;
+
+    /* Secondary — audit/ledger green */
+    --secondary: 158 52% 36%;
+    --secondary-foreground: 40 38% 96%;
+
+    --muted: 40 18% 90%;
+    --muted-foreground: 220 18% 38%;
+
+    /* Accent — pale champagne */
+    --accent: 42 60% 88%;
+    --accent-foreground: 220 40% 12%;
+
+    /* Statutory tones */
+    --warning: 32 88% 46%;
+    --success: 158 52% 36%;
+    --info: 212 70% 44%;
+    --danger: 354 68% 48%;
+
+    --destructive: 354 68% 48%;
+    --destructive-foreground: 40 38% 96%;
+
+    /* Hairlines */
+    --border: 40 20% 84%;
+    --input: 40 20% 84%;
+    --ring: 38 70% 42%;
+
+    --radius: 0.375rem;
+
+    --phone-bezel: 40 18% 70%;
+    --phone-screen: 40 38% 96%;
+
+    /* ===== Gradients ===== */
+    --gradient-hero: linear-gradient(180deg, hsl(40 38% 97%) 0%, hsl(40 30% 92%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(38 70% 42%), hsl(42 78% 56%));
+    --gradient-violet: linear-gradient(135deg, hsl(42 60% 78%), hsl(42 48% 60%));
+    --gradient-aurora: linear-gradient(135deg, hsl(38 70% 50%) 0%, hsl(42 78% 60%) 50%, hsl(46 70% 70%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 30% 96%));
+    --gradient-mesh: linear-gradient(135deg, hsl(38 70% 50% / 0.12), hsl(158 52% 36% / 0.08));
+    --gradient-screen: linear-gradient(180deg, hsl(40 38% 97%) 0%, hsl(40 30% 92%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(158 52% 36%), hsl(166 54% 32%));
+    --gradient-ocean: linear-gradient(135deg, hsl(220 35% 80%), hsl(220 30% 70%));
+    --gradient-foil: linear-gradient(135deg, hsl(38 70% 38%) 0%, hsl(46 88% 60%) 35%, hsl(38 72% 44%) 65%, hsl(46 82% 62%) 100%);
+
+    /* ===== Shadows ===== */
+    --shadow-glow: 0 6px 24px -8px hsl(38 70% 42% / 0.30);
+    --shadow-glow-violet: 0 6px 24px -8px hsl(42 50% 50% / 0.25);
+    --shadow-glow-cyan: 0 6px 24px -8px hsl(158 52% 36% / 0.30);
+    --shadow-soft: 0 12px 40px -16px hsl(220 30% 30% / 0.18);
+    --shadow-phone: 0 50px 100px -20px hsl(220 30% 20% / 0.35), 0 20px 40px -20px hsl(38 70% 30% / 0.15);
+    --shadow-card: 0 4px 16px -4px hsl(220 30% 20% / 0.10), inset 0 1px 0 hsl(0 0% 100% / 0.6);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .dark {
+    /* ===== DARK THEME — Deep navy ledger ===== */
+    --background: 220 38% 11%;
+    --foreground: 40 32% 94%;
+
+    --surface: 220 32% 14%;
+    --surface-elevated: 220 30% 17%;
+    --surface-glass: 220 28% 20%;
+
+    --card: 220 32% 14%;
+    --card-foreground: 40 32% 94%;
+
+    --popover: 220 35% 13%;
+    --popover-foreground: 40 32% 94%;
+
+    --primary: 42 72% 56%;
+    --primary-foreground: 220 38% 9%;
+    --primary-glow: 44 80% 64%;
+
+    --secondary: 158 48% 48%;
+    --secondary-foreground: 220 38% 9%;
+
+    --muted: 220 18% 24%;
+    --muted-foreground: 40 14% 70%;
+
+    --accent: 42 50% 78%;
+    --accent-foreground: 220 38% 11%;
+
+    --warning: 36 88% 58%;
+    --success: 158 48% 48%;
+    --info: 210 80% 64%;
+    --danger: 354 70% 56%;
+
+    --destructive: 354 70% 56%;
+    --destructive-foreground: 40 32% 94%;
+
+    --border: 220 20% 26%;
+    --input: 220 20% 26%;
+    --ring: 42 72% 56%;
+
+    --phone-bezel: 220 25% 18%;
+    --phone-screen: 220 38% 11%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(220 38% 12%) 0%, hsl(220 40% 9%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(42 72% 56%), hsl(44 80% 64%));
+    --gradient-violet: linear-gradient(135deg, hsl(42 50% 78%), hsl(42 38% 60%));
+    --gradient-aurora: linear-gradient(135deg, hsl(42 72% 56%) 0%, hsl(44 80% 64%) 50%, hsl(46 70% 70%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 32% 16%), hsl(220 32% 13%));
+    --gradient-mesh: linear-gradient(135deg, hsl(42 72% 56% / 0.14), hsl(158 48% 48% / 0.08));
+    --gradient-screen: linear-gradient(180deg, hsl(220 38% 12%) 0%, hsl(220 40% 9%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(158 48% 48%), hsl(166 50% 42%));
+    --gradient-ocean: linear-gradient(135deg, hsl(220 35% 32%), hsl(220 30% 22%));
+    --gradient-foil: linear-gradient(135deg, hsl(42 60% 40%) 0%, hsl(46 90% 72%) 35%, hsl(42 70% 50%) 65%, hsl(46 85% 75%) 100%);
+
+    --shadow-glow: 0 6px 24px -8px hsl(42 72% 50% / 0.45);
+    --shadow-glow-violet: 0 6px 24px -8px hsl(42 50% 60% / 0.4);
+    --shadow-glow-cyan: 0 6px 24px -8px hsl(158 48% 48% / 0.45);
+    --shadow-soft: 0 12px 40px -16px hsl(220 60% 4% / 0.7);
+    --shadow-phone: 0 50px 100px -20px hsl(220 60% 2% / 0.85), 0 20px 40px -20px hsl(42 72% 30% / 0.20);
+    --shadow-card: 0 4px 16px -4px hsl(220 60% 4% / 0.5), inset 0 1px 0 hsl(40 32% 94% / 0.04);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+  /* Display = Cormorant Garamond — classic CA letterhead serif */
+  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; font-weight: 600; }
+  .font-display { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; letter-spacing: -0.01em; font-weight: 600; }
+  .font-serif-italic { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; }
+  .font-instrument { font-family: 'Playfair Display', Georgia, serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; }
+  .font-sans { font-family: 'Inter', system-ui, sans-serif; }
+}
+
+@layer components {
+  /* ===== Glass = themed card with hairline border ===== */
+  .glass {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+  .glass-strong {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-primary { box-shadow: var(--shadow-glow); }
+  .glow-violet { box-shadow: var(--shadow-glow-violet); }
+  .glow-cyan { box-shadow: var(--shadow-glow-cyan); }
+
+  /* Gradient text — gold foil accent */
+  .text-gradient-aurora,
+  .text-gradient-primary {
+    background: var(--gradient-foil);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-violet {
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ===== Ledger utilities ===== */
+  .editorial-rule {
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0 24%, transparent 24% 28%, hsl(var(--primary)) 28% 100%);
+  }
+  .double-rule {
+    border-top: 1px solid hsl(var(--primary) / 0.6);
+    border-bottom: 1px solid hsl(var(--primary) / 0.6);
+    padding: 4px 0;
+  }
+  .hairline-top { border-top: 1px solid hsl(var(--border)); }
+  .hairline-bottom { border-bottom: 1px solid hsl(var(--border)); }
+  .ledger-tile {
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+  }
+  .label-mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 9px;
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+  }
+  .seal-ring {
+    background:
+      radial-gradient(circle at center, hsl(var(--primary) / 0) 60%, hsl(var(--primary) / 0.5) 62%, hsl(var(--primary) / 0) 64%),
+      conic-gradient(from 0deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--primary)) 100%);
+  }
+  .dot-sep::before { content: " · "; color: hsl(var(--muted-foreground)); margin: 0 0.35em; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .tick-read { color: hsl(var(--success)); }
+
+  .aurora-bg {
+    background:
+      radial-gradient(ellipse 70% 40% at 100% 0%, hsl(var(--primary) / 0.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 0% 100%, hsl(var(--secondary) / 0.06), transparent 60%),
+      hsl(var(--background));
+  }
+
+  /* Ledger ruling (faint horizontal lines, like accountant's ledger paper) */
+  .ledger-ruled {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 23px,
+      hsl(var(--border) / 0.5) 23px,
+      hsl(var(--border) / 0.5) 24px
+    );
+  }
+
+  /* Paper grain overlay (very subtle) */
+  .paper-grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  }
+}
+
+@keyframes float-slow { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+@keyframes pulse-glow { 0%,100% { box-shadow: 0 0 16px hsl(var(--primary)/0.3) } 50% { box-shadow: 0 0 32px hsl(var(--primary)/0.55) } }
+@keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+@keyframes typing-dot { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4 } 30% { transform: translateY(-3px); opacity: 1 } }
+@keyframes ticker { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+@keyframes seal-rotate { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-typing-dot { animation: typing-dot 1.2s ease-in-out infinite; }
+.animate-ticker { animation: ticker 40s linear infinite; }
+.animate-seal-rotate { animation: seal-rotate 24s linear infinite; }
